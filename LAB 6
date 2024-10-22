@@ -1,0 +1,145 @@
+
+.Task # 01
+
+
+
+model small
+.stack 100h
+.data  
+mg DB 'MY NAME IS : KASHAF NAWAZ$' 
+nam DB 'MY AGE IS : 19$'  
+edu DB 'MY EDUCATION IS :BSSE$'
+liv DB 'I LIVE IN : ISLAMABAD$'
+.code
+main proc
+    mov ax,@data
+    mov ds,  ax
+    mov dl,mg
+    mov dx,offset mg 
+    mov ah,9
+    int 21h 
+      
+    mov dl,10
+    mov ah, 2
+    int 21h
+    mov dl,13
+    mov ah,2
+    int 21h
+   
+   
+    mov dl,nam
+    mov dx,offset nam 
+    mov ah,9
+    int 21h 
+   
+    mov dl,10
+    mov ah, 2
+    int 21h
+    mov dl,13
+    mov ah,2
+    int 21h
+    
+    mov dl,edu
+    mov dx,offset edu 
+    mov ah,9
+    int 21h  
+    
+     mov dl,10
+    mov ah, 2
+    int 21h
+    mov dl,13
+    mov ah,2
+    int 21h
+    
+    mov dl,liv
+    mov dx, offset liv
+    mov ah,9
+    int 21h
+   
+    
+    mov ah,4ch
+    int 21h
+    
+    main endp
+end main
+
+Task # 02
+
+
+.model small
+.stack 100h
+.data
+msg DB 'Enter a character : $' 
+    msg1 db 'The user has entered: $'
+  
+.code
+main proc
+       
+      
+       mov ax,@data
+       mov ds,ax
+       mov dl,msg
+       mov dx,offset msg 
+       
+       mov ah,9    
+       int 21h
+        
+       mov dl,32
+       mov ah,2
+       int 21h
+       
+        mov ah,1
+    int 21h
+    mov bx,ax
+    
+    mov dl,10
+    mov ah,2
+    int 21h 
+    
+    mov dl,13
+    mov ah,2
+    int 21h
+    
+      mov dl, msg1
+    mov dx, offset msg1
+   
+    mov ah,9
+    int 21h
+    
+    mov dl,32
+    mov ah,2
+    int 21h
+    
+    mov dx,bx
+    mov ah,2
+    int 21h
+       
+        mov ah,4ch
+       int 21h
+      
+main endp
+end main
+
+   
+  Task # 03  
+   
+
+
+.model small
+.stack 100h
+.data  
+.code
+main proc
+    
+    
+   mov ah,1h
+   int 21h
+   mov dl,al
+   mov ah,2
+   int 21h
+   sub dl,32
+   mov ah,2
+   int 21h
+    
+    main endp
+end main
