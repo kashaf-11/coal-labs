@@ -1,0 +1,115 @@
+Task 1
+Write a program to find the sum of three single-digit numbers entered by user.
+Program
+
+.model small
+.stack 100h
+
+.data
+.code
+main Proc 
+    mov ah,01     
+
+    int 21h 
+    mov cx,ax
+    
+    mov dl, '+'  
+    mov ah,02
+    int 21h 
+    
+    mov ah,01     
+    int 21h 
+    mov bx,ax
+    
+    add cx,bx
+    sub cx, 30h 
+    mov dx,cx
+
+    mov dl, '+'  
+    mov ah,02
+    int 21h 
+    
+    mov ah,01     
+    int 21h 
+    mov bx,ax 
+            
+    mov dl, '='  
+    mov ah,02
+    int 21h 
+    
+    add cx,bx
+    sub cx,30h
+    mov dx,cx
+    
+    mov ah,02
+    int 21h
+    
+  
+mov ah,4ch
+int 21h
+main endp
+end main
+
+
+
+
+Task 2
+Write a program to use the SCAN_NUM to input prompt for values for three variables x, y and z and the PRINT_NUM to display an appropriate label and value of the expression x – y + z – 1
+Program
+
+.model small
+.stack 100h
+.data
+.code
+main Proc    
+    
+    mov ah,01  
+    int 21h
+    mov cx,ax
+    
+    mov dl,45  
+    mov ah,02
+    int 21h
+    
+    mov ah,01   
+    int 21h
+    mov bx,ax
+    
+    sub cx,bx   
+    add cx,48
+    mov dx,cx
+    
+    mov dl,43   
+    mov ah,02
+    int 21h
+    
+    mov ah,01    
+    int 21h
+    mov bx,ax
+    
+    add bx,cx    
+    sub bx,48
+    mov dx,bx
+    
+    mov dl,45    
+    mov ah,02
+    int 21h
+    
+    mov dl,'1'   
+    mov ah,02
+    int 21h
+    
+    mov dl,61    
+    mov ah,02
+    int 21h
+    
+    sub bx,1   
+    mov dx,bx
+    
+    mov ah,02    
+    int 21h
+    
+mov ah,4ch
+int 21h
+main endp
+end main
